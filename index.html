@@ -14,16 +14,13 @@
   <div class="wrapper">
     <!-- header / nav -->
     <header class="header">
-      <!-- burger menu for media query -->
-      <!-- <button class="nav-toggle">
-        <i class="fas fa-bars"></i>
-      </button> -->
-      
-      <!-- <i class="fas fa-times"></i> -->
-      <!-- logo -->
-      <a href="#home" class="scroll-link">
-        <img class="btn-img" src="./media/virginGalacticLogoSmall.png" alt="Virgin Galatic Logo"> 
-      </a>  
+      <div class="nav-header">
+        <!-- burger menu for media query -->
+        <button class="nav-toggle"><i class="fas fa-bars"></i></button>
+        <a class="btn-img" href="#home" class="scroll-link">
+          <img src="./media/virginGalacticLogoSmall.png" alt="Virgin Galatic Logo"> 
+        </a>  
+      </div>
       <!-- links -->
       <nav class="links-container">
         <ul class="links">
@@ -43,7 +40,7 @@
             <a href="#research" class="scroll-link">
               <a href=" https://www.virgingalactic.com/research" target="_blank">research&nbsp;<i class="fas fa-external-link-alt"></i>
               </a>
-            </a>>
+            </a>
           </li> 
           <li class="nav-item">
             <a href="#news" class="scroll-link">
@@ -53,8 +50,10 @@
             </a>
           </li> 
         </ul>
-      </nav>  
-      <button class="btn btn-signup btn-lozenge">SIGN UP&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></button>
+      </nav> 
+      <div class="btn-signup">
+        <button class="btn btn-lozenge">SIGN UP&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></button>
+      </div> 
     </header>
 
     <!-- content sections -->
@@ -62,14 +61,14 @@
     <!-- home / banner -->
       <section id="home" class="section">
         <div>
-          <iframe id="banner" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe class="banner" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </section>
       <!-- Why we go -->
       <div class="sub-heading"><h2>why we go</h2></div>
       <section id="why-we-go" class="section narrow-section">
         <div class="quote">
-          <h3>"I really hope that there will be millions of kids all over the world who will be captivated and inspired about the possibility of them going to space one day."</h3>
+          <h3>“I really hope that there will be millions of kids all over the world who will be captivated and inspired about the possibility of them going to space one day.”</h3>
           <p class="quoter">– Richard Branson, Founder, Virgin Galactic</p>
 
         </div>
@@ -91,6 +90,28 @@
           </div>  
         </div>
       </section>
+      <!-- The Experience -->
+      <section id="the-experience">
+        <!-- This is an image carousel on the real website... -->
+        <h2>The Experience</h2>
+        <div>
+          <img src="./media/hero-TheExperience.png" alt="The Experience Image">
+        </div>
+      </section>
+      <!-- Spaceport America -->
+      <section id="spaceport-america" class="narrow-section">
+        <div class="hero-content">
+          <div class="sub-heading">
+            <h2 class="underline-overline">SPACEPORT AMERICA</h2>
+          </div>
+          <div>
+            <p>Spread across 27 square miles, Spaceport America is our center of flight operations, and the world’s first purpose-built commercial spaceport.</p>
+          </div>
+          <div>
+        </div>
+      </section>
+
+
       <div class="modal-overlay">
         <!-- Font Awesome link -->
         <div class="modal-container">

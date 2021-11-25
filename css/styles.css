@@ -6,16 +6,9 @@ imports
 -------
 */
 
-/* 
-google fonts 
-Roboto --> Helvetica Neue
-Poppins --> Sofia-Pro
-Helvetica
-Arial
- */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
-
+ @import url('http://fonts.cdnfonts.com/css/helvetica-neue-9');
+ @import url('http://fonts.cdnfonts.com/css/sofia-pro');
 
 /*
 --------- 
@@ -23,18 +16,21 @@ variables
 --------- 
 */
 
+
+
 :root{
---ff-primary: "Poppins", "Roboto", Helvetica, Arial;
---ff-secondary: "Roboto", "Poppins", Helvetica, Arial;
+--ff-primary: 'Sofia Pro', 'Helvetica Neue', Helvetica, sans-serif, Arial;
+--ff-secondary: 'Helvetica Neue', Helvetica, sans-serif Arial;
 --nav-font-size: 16px;
---spacing: 0.15rem;
---col-btn-blue: rgb(66, 83, 231);
+--line-height: 0.25px;
+--spacing: 0.25rem;
+--col-quote-offblack: #040A11;
+--col-btn-blue: #4289E7;
 --col-btn-blue2: rgb(38, 36, 206);
 --transition-slow: 1s;
 --transition-med: 0.75s;
 --transition-fast: 0.5s;
 --transition-vfast: 0.25s;
-
 --max-width: 1170px;
 --fixed-width: 1520px;
 }
@@ -62,7 +58,7 @@ html {
 
 body{
   font-family: var(--ff-primary);
-  line-height: 1.2;
+  line-height: var(--line-height)
   letter-spacing: var(--spacing);
 }
 
@@ -85,9 +81,14 @@ h2{
 p{
   line-height: 1.5rem;
   letter-spacing: 0.1rem;
-
 }
 
+.underline-overline{
+  border-bottom: 2px solid #000 ;
+  padding-bottom: 5px;
+  border-top: 2px solid #000 ;
+  padding-top: 5px;
+}
 
 ul{
   list-style-type: none;
@@ -98,10 +99,10 @@ a{
   text-transform: capitalize;
 }
 
-
-.quote{
+  .quote{
   font-size: 16px;
   font-weight: lighter;
+  color: var(--col-quote-offblack);
   letter-spacing: 0.25rem;
   padding-left: 10px;
   padding-right: 10px;
@@ -110,20 +111,20 @@ a{
 
 .quoter{
   text-align: right;
+  color: var(--col-quote-offblack);
   font-size: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
 }
-
 
 /* Web site clone */
 
 .wrapper{
   width: 75%;
   margin: 0 auto;
-}
 
+}
 
 .header{
   display: flex;
@@ -137,30 +138,73 @@ a{
   z-index:99;
 }
 
-.btn-img{
-  aspect-ratio: 16/9;
-  width: 150px;
+.nav-header {
+  height: 100%;
+  width: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.btn-img: hover{
+.nav-toggle{
+  cursor: pointer;
+  visibility: hidden;
+  transition: var(--transition-med);
+  background-color: white;
+  border-style: none;
+
+}
+.nav-toggle i{
+  font-size: 32px;
+  text-align: center;
+}
+
+.nav-toggle:hover {
+  transform: rotate(-90deg);
+  color: var(--col-btn-blue);
+}
+
+.btn-img img{
+  display: block;
+  border-style: none;
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  min-width: 60px;
+}
+
+.btn-img:hover{
   cursor: pointer;
 }
 
-.links-container ul{
-  height: auto;
+.links-container{
   display: flex;
   font-size: var(--nav-font-size);
+  height: 100%;
+  visibility: visible;
+}
+
+.links-container ul{
+  display: flex;
+  align-items: center;
 }
 
 .links a{
   color: black;
   padding: 10px;
   transition: var(--transition-vfast);
-
+  font-size: 1rem;
+  font-weight: normal;
 }
 
 .links a:hover{
   color: var(--col-btn-blue);
+}
+
+.btn-signup{
+  display: flex;
+  align-items: center;
+  visibility: visible;
 }
 
 .btn-lozenge {
@@ -187,6 +231,12 @@ a{
   background-color: var(--col-btn-blue2);
 }
 
+.banner{
+  width: 100%;
+  margin: 0 auto;
+  height: 630px;
+}
+
 .social-icons li{
   font-size: 32px;
   color: var(--col-btn-blue)
@@ -199,10 +249,10 @@ a{
 
 .section{
   width: 100%;
+  margin: 0 auto;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  /* align-content: center; */
+  justify-content: center;
+  align-items: center;
   padding-bottom: 4rem;
 }
 
@@ -213,8 +263,13 @@ a{
 
 .section div{
   flex: 1;
-  flex-basis: 50%;
+  flex-basis: 100%;
+}
 
+.card-vid{
+  width: 100%;
+  min-height: 400px;
+  height: auto;
 }
 
 #become-an-astronaut::before{
@@ -223,7 +278,7 @@ a{
   top: 0;
   left: 0;
   width: 100%;
-  height: 90%;
+  height: 100%;
   background: url(../media/hero-BecomeAnAstronaut.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -238,6 +293,29 @@ a{
   display: flex;
   justify-content: center;
   align-items: flex-start;
+}
+
+#spaceport-america::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 630px;
+  background: url(../media/hero-SpaceportAmerica.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin-top: 3rem;
+}
+
+#spaceport-america{
+  position: relative;
+  height: 630px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
 }
 
 .hero-content{
@@ -267,16 +345,22 @@ a{
   width:230px;
 }
 
-#banner{
-  width: 100%;
-  height: 630px;
+#the-experience{
+  position: relative;
 }
 
-.card-vid{
+#the-experience img{
+  
   width: 100%;
-  min-height: 400px;
-  height: auto;
+  margin: 0 auto;
 }
+
+#the-experience h2{
+  position: absolute;
+  left: 5vw;
+  top: 6vh;
+}
+
 
 
 /* 
@@ -299,7 +383,7 @@ Sign Up Modal Overlay
   visibility: hidden;
   z-index: -10;
 }
-/* OPEN/CLOSE MODAL */
+
 .open-modal {
   visibility: visible;
   z-index: 100;
@@ -393,3 +477,15 @@ Sign Up Modal Overlay
 Media Queries
 -------------
 */
+
+@media screen and (max-width:1200px) {
+  .nav-toggle{
+    visibility: visible;
+  }
+  .links-container{
+    visibility: hidden;
+  }
+  .btn-signup{
+    visibility: hidden;
+  }
+}
