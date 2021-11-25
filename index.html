@@ -21,7 +21,9 @@
       
       <!-- <i class="fas fa-times"></i> -->
       <!-- logo -->
-      <img class="btn-img" src="./media/virginGalacticLogoSmall.png" alt="Virgin Galatic Logo"> 
+      <a href="#home" class="scroll-link">
+        <img class="btn-img" src="./media/virginGalacticLogoSmall.png" alt="Virgin Galatic Logo"> 
+      </a>  
       <!-- links -->
       <nav class="links-container">
         <ul class="links">
@@ -38,14 +40,21 @@
             <a href="#spaceport-america" class="scroll-link">spaceport america</a>
           </li> 
           <li class="nav-item">
-            <a href="#research" class="scroll-link">research<i class="fas fa-external-link-alt"></i></a>
+            <a href="#research" class="scroll-link">
+              <a href=" https://www.virgingalactic.com/research" target="_blank">research&nbsp;<i class="fas fa-external-link-alt"></i>
+              </a>
+            </a>>
           </li> 
           <li class="nav-item">
-            <a href="#news" class="scroll-link">news<i class="fas fa-external-link-alt"></i></a>
+            <a href="#news" class="scroll-link">
+              <a href="https://www.virgingalactic.com/news" target="_blank">
+                news&nbsp;<i class="fas fa-external-link-alt"></i>
+              </a>
+            </a>
           </li> 
         </ul>
       </nav>  
-      <button class="btn btn-signup btn-lozenge">SIGN UP ></button>
+      <button class="btn btn-signup btn-lozenge">SIGN UP&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></button>
     </header>
 
     <!-- content sections -->
@@ -69,11 +78,8 @@
         <div>
       </section>
       <!-- Become an astronaught -->
-      <section id="become-an-astronaut" class="section">
-        <div class="banner full-banner">
-          <div>
-            <img src="./media/hero-BecomeAnAstronaut.jpg" alt="become an astronaught banner">
-          </div>
+      <section id="become-an-astronaut" >
+        <div class="hero-content">
           <div class="sub-heading">
             <h2>Become an astronaught</h2>
           </div>
@@ -81,39 +87,67 @@
             <p>This year, we’ll be making a limited number of tickets available for future spaceflights. Take the leap with us as we get one step closer to filling the world with astronauts.</p>
           </div>
           <div>
-            <button class="btn btn-lozenge">fly with us ></button>
+            <button class="btn btn-lozenge">fly with us&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></button>
           </div>  
         </div>
       </section>
       <div class="modal-overlay">
+        <!-- Font Awesome link -->
         <div class="modal-container">
-          <div>
-            <!-- <img src="./media/signupModalImage.jpg" alt=""> -->
+          <h1>Register your interest in Virgin Galactic.</h1>
+          <div class="modal-img">
+            <img src="./media/signupModalImage.jpg" alt="">
           </div>
           <button class="close-modal-btn">
             <i class="fas fa-times"></i>
           </button>
-          <form>
-            <label for="firstname">First Name:</label><br>
-            <input type="text" id="firstname" name="firstname"><br>
-            <label for="lastname">Last Name:</label><br>
-            <input type="text" id="lastname" name="lastname"><br>
-            <label for="email">Email Address:</label><br>
-            <input type="email" id="email" name="email"><br>
-            <label for="checkboxes">I’m interested in: (Check all that apply)</label><br>
-            <input type="checkbox" id="vg-updates" name="vg-updates" unchecked>
-            <label for="vg-updates">Virgin Galactic updates.</label><br>
-            <input type="checkbox" id="future-ticket-sales" name="future-ticket-sales" unchecked>
-            <label for="future-ticket-sales">Future ticket sales.</label><br>
-            <input type="checkbox" id="research" name="research" unchecked>
-            <label for="vg-updates">Conducting a research experiment in space.</label><br>
-            <input type="checkbox" id="consent" name="consent" unchecked>
-            <label for="consent">By ticking this box you consent to Virgin Galactic sending you communications & information about our programme, sending invites to Virgin Galactic events and contacting you with ticket sales information. We need you to tick this box to confirm that you are happy to receive these communications from us otherwise we will not be able to provide you with updates about our events or programme. However, even if you choose not to tick this box we will still email you regarding future ticket sales information. You can withdraw your consent at any time as set out in our Privacy Notice. We will store and use the data you have provided above as set out in our Privacy Notice.</label><br> 
-          </form>
-          <p>You can always tell us you no longer want to receive Mission Updates or hear about reservations by sending an email to Updates@virgingalactic.com.</p>
-          We will store and use the data you have provided above as set out in our Privacy Notice.
+          <div class="signup-form">
+            <form>
+              <label class="lbl" for="firstname">First Name:</label><br>
+              <input class="txt-input" type="text" id="firstname" name="firstname"><br>
+              <label class="lbl" for="lastname">Last Name:</label><br>
+              <input class="txt-input" type="text" id="lastname" name="lastname"><br>
+              <label class="lbl" for="email">Email Address:</label><br>
+              <input class="txt-input" type="email" id="email" name="email"><br><br>
+              <label for="checkboxes">I’m interested in: (Check all that apply)</label><br>
+              <input class="chkbox" type="checkbox" id="vg-updates" name="vg-updates" unchecked>
+              <label for="vg-updates">Virgin Galactic updates.</label><br>
+              <input class="chkbox"  type="checkbox" id="future-ticket-sales" name="future-ticket-sales" unchecked>
+              <label for="future-ticket-sales">Future ticket sales.</label><br>
+              <input class="chkbox"  type="checkbox" id="research" name="research" unchecked>
+              <label for="vg-updates">Conducting a research experiment in space.</label><br><br><br>
+              <input class="chkbox"  type="checkbox" id="consent" name="consent" unchecked>
+              <label for="consent">By ticking this box you consent to Virgin Galactic sending you communications & information about our programme, sending invites to Virgin Galactic events and contacting you with ticket sales information. We need you to tick this box to confirm that you are happy to receive these communications from us otherwise we will not be able to provide you with updates about our events or programme. However, even if you choose not to tick this box we will still email you regarding future ticket sales information. You can withdraw your consent at any time as set out in our Privacy Notice. We will store and use the data you have provided above as set out in our Privacy Notice.</label><br> 
+              <p>You can always tell us you no longer want to receive Mission Updates or hear about reservations by sending an email to Updates@virgingalactic.com.</p>
+              <p>We will store and use the data you have provided above as set out in our Privacy Notice.</p>
+            </form>
+          </div>
           <br><br>
-          <button class="btn btn-signup btn-lozenge">Submit</button>
+          <button class="btn btn-submit btn-lozenge">Submit</button>
+          <div class="social-icons">
+            <ul>
+              <li>
+                <a href="https://www.instagram.com/" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/" target="_blank">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/virgingalactic" target="_blank">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UClcvOr7LV8tlJwJvkNMmnKg" target="_blank">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </main>

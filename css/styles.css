@@ -17,11 +17,17 @@ Arial
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
 
 
-/* variables */
+/*
+--------- 
+variables
+--------- 
+*/
+
 :root{
---ff-primary: "Poppins", " Roboto", Helvetica, Arial;
+--ff-primary: "Poppins", "Roboto", Helvetica, Arial;
+--ff-secondary: "Roboto", "Poppins", Helvetica, Arial;
 --nav-font-size: 16px;
---spacing: 0.25rem;
+--spacing: 0.15rem;
 --col-btn-blue: rgb(66, 83, 231);
 --col-btn-blue2: rgb(38, 36, 206);
 --transition-slow: 1s;
@@ -30,11 +36,15 @@ Arial
 --transition-vfast: 0.25s;
 
 --max-width: 1170px;
---fixed-width: 620px;
+--fixed-width: 1520px;
 }
 
 
-/* globals */
+/*
+------- 
+globals
+-------
+*/
 
 html {
   box-sizing: border-box;
@@ -53,7 +63,7 @@ html {
 body{
   font-family: var(--ff-primary);
   line-height: 1.2;
-  letter-spacing: 0.3px;
+  letter-spacing: var(--spacing);
 }
 
 
@@ -61,11 +71,21 @@ body{
   font-size: var(--nav-font-size);
 }
 
+h1{
+  font-weight: bold;
+  font-size: 4rem;
+}
 
 h2{
   text-transform: uppercase;
   font-weight: bold;
   font-size: 2rem;
+}
+
+p{
+  line-height: 1.5rem;
+  letter-spacing: 0.1rem;
+
 }
 
 
@@ -100,7 +120,7 @@ a{
 /* Web site clone */
 
 .wrapper{
-  width: 80%;
+  width: 75%;
   margin: 0 auto;
 }
 
@@ -111,14 +131,19 @@ a{
   align-items: center;
   background-color: white;
   width: 100%;
-  height: 100px;
+  height: 90px;
   position: sticky;
   top: 0;
+  z-index:99;
 }
 
 .btn-img{
   aspect-ratio: 16/9;
-  width: 200px;
+  width: 150px;
+}
+
+.btn-img: hover{
+  cursor: pointer;
 }
 
 .links-container ul{
@@ -140,8 +165,9 @@ a{
 
 .btn-lozenge {
   background-color: var(--col-btn-blue);
-  min-height: 40%;
-  max-height: auto;
+  height: 44px;
+  min-width: 120px;
+  max-width: auto;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -152,13 +178,18 @@ a{
   font-weight: bold;
   margin: 4px 2px;
   display: inline-block;
-  border-radius: 16px;
+  border-radius: 22px;
   transition: var(--transition-vfast);
 }
 
 .btn-lozenge:hover{
   cursor: pointer;
   background-color: var(--col-btn-blue2);
+}
+
+.social-icons li{
+  font-size: 32px;
+  color: var(--col-btn-blue)
 }
 
 .sub-heading{
@@ -186,25 +217,55 @@ a{
 
 }
 
-.full-banner{
-  background-color: violet;
-  position: relative;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content:space-between;
-  align-items: center;
-  position: relative;
-  
-}
-
-.full-banner div{
-  display: flex;
-  width: 50%;
-  background-color: yellow;
-  flex: 1;
+#become-an-astronaut::before{
+  content: "";
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background: url(../media/hero-BecomeAnAstronaut.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  filter: brightness(80%);
 }
 
+#become-an-astronaut{
+  position: relative;
+  width:100%;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 40%;
+}
+
+.hero-content h2{
+  margin-top: 5rem;
+}
+
+.hero-content p{
+  width: 80%;
+  margin: 0 auto;
+  font-family: var(--ff-secondary);
+  font-weight: normal;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero-content .btn{
+  width:230px;
+}
 
 #banner{
   width: 100%;
@@ -226,11 +287,12 @@ Sign Up Modal Overlay
 
 .modal-overlay {
   position: fixed;
+  overflow-y: initial !important;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.6);
   display: grid;
   place-items: center;
   transition: var(--transition-med);
@@ -240,25 +302,80 @@ Sign Up Modal Overlay
 /* OPEN/CLOSE MODAL */
 .open-modal {
   visibility: visible;
-  z-index: 10;
+  z-index: 100;
 }
 .modal-container {
+  overflow-y: auto;
   background: black;
+  box-shadow: 1px -27px 12px -14px rgba(0,0,0,0.69);
   color: white;
   border-radius: 2px;
-  width: 90vw;
-  height: 30vh;
+  height: 80%;
+  width: 100%;
   max-width: var(--fixed-width);
   text-align: center;
   display: grid;
   place-items: center;
-  position: relative;
+  /* position: relative; */
 }
+
+.modal-container h1{
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+.modal-container .btn-submit{
+  width: 180px;
+  height: 60px;
+  border-radius: 30px;
+  margin-bottom: 3rem;
+}
+
+.social-icons{
+  width: 12%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.social-icons ul{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.social-icons i{
+  color: var(--col-btn-blue);
+}
+
+.signup-form{
+  padding-top: 1rem;
+  text-align: left;
+  width: 50%;
+  margin: 0 auto;
+  
+}
+
+.signup-form .lbl, .txt-input{
+  width: 100%;
+  margin-bottom: 1rem;
+  line-height: 2rem;
+}
+
+.signup-form .chkbox{
+  margin-top: 1rem;
+
+}
+.signup-form p{
+  margin-top: 1rem;
+}
+
 .close-modal-btn {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   background: transparent;
   border-color: transparent;
   color: white;
