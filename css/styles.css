@@ -97,25 +97,6 @@ a{
   text-transform: capitalize;
 }
 
-  .quote{
-  font-size: 16px;
-  font-weight: lighter;
-  color: var(--col-quote-offblack);
-  letter-spacing: 0.25rem;
-  padding-left: 10px;
-  padding-right: 10px;
-  line-height: 2rem;
-}
-
-.quoter{
-  text-align: right;
-  color: var(--col-quote-offblack);
-  font-size: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 5px;
-}
-
 /* Web site clone */
 
 .wrapper{
@@ -266,14 +247,38 @@ Content
   padding-bottom: 4rem;
 }
 
-.narrow-section{
-  width: 90%;
-  margin: 0 auto;
-}
-
 .section div{
   flex: 1;
   flex-basis: 100%;
+}
+
+.narrow-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4rem;
+  width: 90%;
+  min-height: 400px;
+  margin: 0 auto;
+}
+
+.quote{
+  font-size: 16px;
+  font-weight: lighter;
+  color: var(--col-quote-offblack);
+  letter-spacing: 0.25rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 2rem;
+}
+
+.quoter{
+  text-align: right;
+  color: var(--col-quote-offblack);
+  font-size: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
 }
 
 .card-vid{
@@ -422,7 +427,7 @@ Sign Up Modal Overlay
   background: rgba(0, 0, 0, 0.6);
   display: grid;
   place-items: center;
-  transition: var(--transition-med);
+  transition: visability var(--transition-med);
   visibility: hidden;
   z-index: -10;
 }
@@ -534,6 +539,14 @@ Media Queries
 -------------
 */
 
+
+@media screen and (max-width:1400px) {
+  
+  .wrapper{
+    width: 90%;
+  }
+}
+
 @media screen and (max-width:1200px) {
   .nav-toggle{
     visibility: visible;
@@ -543,5 +556,12 @@ Media Queries
   }
   .btn-signup{
     visibility: hidden;
+  }
+}
+
+@media screen and (max-width:600px) {
+  
+  .wrapper{
+    width: 98%;
   }
 }
