@@ -21,7 +21,7 @@ variables
 :root{
 --ff-primary: 'Sofia Pro', 'Helvetica Neue', Helvetica, sans-serif, Arial;
 --ff-secondary: 'Helvetica Neue', Helvetica, sans-serif Arial;
---nav-font-size: 16px;
+--nav-font-size: 1rem;
 --line-height: 0.25px;
 --spacing: 0.25rem;
 --col-quote-offblack: #040A11;
@@ -55,13 +55,10 @@ html {
   box-sizing: inherit;
 
 }
-
+/* missing ; here  */
 body{
   font-family: var(--ff-primary);
-  line-height: var(--line-height)
-  letter-spacing: var(--spacing);
 }
-
 
 .fas{
   font-size: var(--nav-font-size);
@@ -76,6 +73,7 @@ h2{
   text-transform: uppercase;
   font-weight: bold;
   font-size: 2rem;
+  letter-spacing: var(--spacing);
 }
 
 p{
@@ -125,6 +123,12 @@ a{
   margin: 0 auto;
 
 }
+
+/* 
+------
+Header
+------
+*/
 
 .header{
   display: flex;
@@ -231,6 +235,12 @@ a{
   background-color: var(--col-btn-blue2);
 }
 
+/* 
+-------
+Content
+-------
+*/
+
 .banner{
   width: 100%;
   margin: 0 auto;
@@ -295,27 +305,44 @@ a{
   align-items: flex-start;
 }
 
+#the-experience{
+  position: relative;
+  margin-bottom: 6rem;
+}
+
+#the-experience img{
+  width: 100%;
+  margin: 0 auto;
+}
+
+#the-experience h2{
+  position: absolute;
+  left: 5vw;
+  top: 6vh;
+}
+
 #spaceport-america::before{
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 630px;
-  background: url(../media/hero-SpaceportAmerica.jpg);
+  height: 100%;
+  background: url(../media/hero-BecomeAnAstronaut.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  margin-top: 3rem;
+  filter: brightness(80%);
 }
 
 #spaceport-america{
   position: relative;
-  height: 630px;
+  width:100%;
+  height:100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-
+  
 }
 
 .hero-content{
@@ -345,22 +372,38 @@ a{
   width:230px;
 }
 
-#the-experience{
-  position: relative;
-}
 
-#the-experience img{
-  
+/* 
+------
+Footer
+------
+*/
+
+footer{
+  display: flex;
+  align-items: center;
+  background-color: white;
   width: 100%;
+  height: 50px;
+  bottom: 0;
+  margin-bottom: 2rem;
+}
+
+footer .links-container{
+  display: flex;
+  height: 100%;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+}
+
+footer ul{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
   margin: 0 auto;
+  font-size: 0.9rem;
 }
-
-#the-experience h2{
-  position: absolute;
-  left: 5vw;
-  top: 6vh;
-}
-
 
 
 /* 
@@ -404,9 +447,17 @@ Sign Up Modal Overlay
 }
 
 .modal-container h1{
-  width: 80%;
+  width: 70%;
+  
   margin: 0 auto;
   padding-bottom: 3rem;
+  margin-top: 2rem;
+}
+.modal-container a{
+  color: white;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--col-btn-blue);
 }
 
 .modal-container .btn-submit{
@@ -443,6 +494,11 @@ Sign Up Modal Overlay
 
 .signup-form .lbl, .txt-input{
   width: 100%;
+  margin-bottom: 1rem;
+  line-height: 2rem;
+}
+
+.signup-form .chk-lbl{
   margin-bottom: 1rem;
   line-height: 2rem;
 }
